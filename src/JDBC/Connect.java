@@ -16,7 +16,7 @@ public class Connect {
     }
 
     public Connection connect(String name, String password) throws SQLException  {
-        if(con1 != null)
+        if(con1 == null)
             con1 = DriverManager.getConnection(address, name, password);
         return con1;
     }
