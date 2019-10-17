@@ -6,5 +6,4 @@ SELECT nomserv, dataff from serveur natural join affecter where numtab = 15 and 
 
 SELECT nomserv, sum(montcom), count(numcom) from commande natural join affecter natural join serveur where dataff between to_date('10/09/2016') and to_date('12/10/2016') group by nomserv;
 
-SELECT nomserv from commande natural join affecter natural join serveur where dataff between to_date('10/09/2016') and to_date('12/10/2016') group by nomserv having sum(montcom) is null;
--- pb si serveur n'a pas servi : il n'a pas de CA, meme pas egal a null
+SELECT nomserv from serveur group by nomserv having nomserv not in (SELECT nomserv from commande natural join affecter natural join serveur where dataff between to_date('10/09/2016') and to_date('12/10/2016'));
