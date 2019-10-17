@@ -9,6 +9,7 @@ public class Connect {
     private Connection con1;
     private String address;
     public static final Connect univLorraine = new Connect("jdbc:oracle:thin:@charlemagne.iutnc.univ-lorraine.fr:1521:infodb");
+    public static final Connect localHost = new Connect("jdbc:oracle:thin:@localhost:32118:XE");
 
     private Connect(String a){
         address = a;
