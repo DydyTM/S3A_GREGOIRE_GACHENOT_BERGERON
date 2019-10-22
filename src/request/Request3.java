@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Request3 {
-    public static void request(Connection c, String dateD, String dateF) throws SQLException {
-        String req = "SELECT nomserv, dataff from serveur natural join affecter where numtab = 15 and dataff between to_date('" + dateD + "') and to_date('" + dateF + "')";
+    public static void request(Connection c, int numtab, String dateD, String dateF) throws SQLException {
+        String req = "SELECT nomserv, dataff from serveur natural join affecter where numtab = " + numtab + " and dataff between to_date('" + dateD + "') and to_date('" + dateF + "')";
         Statement stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery(req);
         Utils.printQueryResult(rs);
