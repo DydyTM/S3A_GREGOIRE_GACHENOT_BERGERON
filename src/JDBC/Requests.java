@@ -8,8 +8,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Requests {
-    @LauncherEntry
-    public void Req_1(Connection c, @Param(name="date_debut") Object date1, @Param(name="date_fin") Object date2) {
+    @LauncherEntry(order=1)
+    public void Req_1(Connection c, @Param(name="date_debut(dd/mm/yyyy)") Object date1, @Param(name="date_fin(dd/mm/yyyy)") Object date2) {
         try {
             Request1.request(c, (String) date1, (String) date2);
         } catch (SQLException e) {
