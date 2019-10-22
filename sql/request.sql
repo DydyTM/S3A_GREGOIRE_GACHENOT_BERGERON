@@ -17,8 +17,8 @@ create or replace trigger triggerTestQuantitePlat before
         v_quantite number(2);
         v_nbPers number(2);
     begin
-        select quantite into v_quantite from contient natural join commande where contient.numcom = commande.numcom;
-        select nbpers into v_nbPers from commande natural join contient where contient.numcom = commande.numcom;
+        select quantite into v_quantite from contient natural join commande;
+        select nbpers into v_nbPers from commande natural join contient;
         if(v_quantite > v_nbpers) then
             raise_application_error(-1, 'La quantité est supérieur au nombre de personne');
         end if;
