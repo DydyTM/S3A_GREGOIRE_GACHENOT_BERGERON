@@ -188,7 +188,7 @@ public class Launcher {
 
             Matcher m = string.matcher(in);
             if (m.matches())
-                return Optional.of(new StringNode(m.group()));
+                return Optional.of(new StringNode(m.group(1)));
             return Optional.empty();
         }
 
@@ -281,16 +281,6 @@ public class Launcher {
                 m1.getAnnotation(LauncherEntry.class).order(),
                 m2.getAnnotation(LauncherEntry.class).order()
             );
-        }
-    }
-
-    private static class Tuple<T, U> {
-        public T fst;
-        public U snd;
-
-        public Tuple(T t, U u) {
-            fst = t;
-            snd = u;
         }
     }
 }
