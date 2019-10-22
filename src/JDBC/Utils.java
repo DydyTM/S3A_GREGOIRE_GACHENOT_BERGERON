@@ -48,10 +48,10 @@ public class Utils {
         System.out.print(padding.apply(" ", maxColumn.length()) + " ");
         paddings.forEach(
             (k, v) -> System.out.print(
-                "| " + k
+                "│ " + k
                 + padding.apply(" ", v - k.length()) + " ")
         );
-        System.out.println(" |");
+        System.out.println(" │");
 
         for (int i = 1; i <= rowCount; ++i) {
             final int i_ = i;
@@ -63,12 +63,12 @@ public class Utils {
                 LinkedList<String> vals = results.get(k);
                 String value = vals.get(i_ - 1);
 
-                System.out.print("| " + value
+                System.out.print("│ " + value
                     + padding.apply(" ", (v < k.length() ? k.length() : v) - value.length())
                     + " ");
             });
 
-            System.out.println(" |");
+            System.out.println(" │");
         }
     }
 
