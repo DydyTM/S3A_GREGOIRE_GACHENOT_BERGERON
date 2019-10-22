@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class Request1 {
     public static void request(Connection c, String dateD, String dateF) throws SQLException {
-        String req = "SELECT numplat, libelle from plat natural join contient natural join commande where datcom between to_date('" + dateD + "') and to_date('" + dateF + "') group by numplat, libelle order by numplat";
+        String req = "SELECT numplat, libelle from plat natural join contient natural join commande where datcom between to_date('" + dateD + "', 'DD/MM/YYYY') and to_date('" + dateF + "', 'DD/MM/YYYY') group by numplat, libelle order by numplat";
         Statement stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery(req);
         System.out.println("\nRequesting ...\n");
