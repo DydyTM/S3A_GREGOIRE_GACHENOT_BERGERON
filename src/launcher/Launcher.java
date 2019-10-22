@@ -251,6 +251,7 @@ public class Launcher {
         String s = Arrays.stream(m.getName().split("_"))
                          .reduce("", (acc, s1) -> acc + " " + s1);
 
+        s += ":";
         s += Arrays.stream(m.getParameters())
                    .skip(1)
                    .map(p -> {
