@@ -52,4 +52,13 @@ public class Requests {
             e.printStackTrace();
         }
     }
+
+    @LauncherEntry
+    public void Req6(Connection c, @Param(name="Numero_de_commande") Object numCom) {
+        try {
+            Request6.request(c, (Integer)numCom);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
