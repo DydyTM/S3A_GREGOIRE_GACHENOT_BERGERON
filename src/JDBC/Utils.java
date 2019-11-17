@@ -11,7 +11,16 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 
+/**
+ * classe pour l affichage des resultats des requetes
+ */
 public class Utils {
+
+    /**
+     * methode permettant d afficher les resultats d'un requete donnée
+     * @param rs resultats de la requete donnée a afficher
+     * @throws SQLException
+     */
     public static void printQueryResult(ResultSet rs) throws SQLException {
         HashMap<String, LinkedList<String>> results = new HashMap<>();
         ResultSetMetaData rsmd = rs.getMetaData();
